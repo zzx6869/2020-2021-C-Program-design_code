@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <cstring>
+#include <sstream>
+#include <cstdlib>
+using namespace std;
+
+class Student {
+public:
+    
+    void input()
+    {
+        while (1)
+        {
+            int c = getchar();
+            if (c != ',')
+                name.push_back(c);
+            else break;
+        }
+        cin >> age >> ch >> num >> ch >> goal1 >> ch >> goal2 >> ch >> goal3 >> ch >> goal4;
+    }
+    void calculate()
+    {
+        ave = (goal1 + goal2 + goal3 + goal4) / 4;
+    }
+    void output()
+    {
+        cout << name << ',' << age << ',' << num << ',' << ave;
+    }
+private:
+    string name;
+    char ch;
+    int age, num, goal1, goal2, goal3, goal4, ave;
+};
+
+int main() {
+	Student student;        // 定义类的对象
+	student.input();        // 输入数据
+	student.calculate();    // 计算平均成绩
+	student.output();       // 输出数据
+}
